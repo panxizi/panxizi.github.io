@@ -282,130 +282,7 @@
 <p><img src="http://cdn.jsdelivr.net/gh/panxizi/blog_image/img/C++_pic/image-20220705223703473.png" alt="image-20220705223703473"></p>
 </li>
 </ul>
-</div><div class="index-category-tag"><div class="level-item"><i class="fas fa-folder-open has-text-grey"> </i><a class="article-more button is-small link-muted index-categories" href="/categories/C/">C++</a></div>  <div class="level-item"><i class="fas fa-tags has-text-grey"> </i><a class="article-more button is-small link-muted index-tags" href="/tags/C/">C++</a></div><hr></div></article></div><div class="card"><div class="card-image"><a class="image is-7by3" href="/2022/07/06/Primer-C++-%E7%AC%AC%E4%BA%94%E7%89%88%EF%BC%88%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E5%8F%98%E9%87%8F%E5%92%8C%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B-%E7%AC%AC%E4%BA%8C%E8%8A%82-%E5%8F%98%E9%87%8F%EF%BC%89/"><img class="fill" src="http://cdn.jsdelivr.net/gh/panxizi/blog_image/img/C++_pic/ffe1268ebd4674668d8b8adc79fa46d.png" alt="Primer C++ 第五版（第二章 变量和基本类型 第二节 变量）"></a></div><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><i class="far fa-calendar-plus"> </i>2022-07-06  <a class="commentCountImg" href="/2022/07/06/Primer-C++-%E7%AC%AC%E4%BA%94%E7%89%88%EF%BC%88%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E5%8F%98%E9%87%8F%E5%92%8C%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B-%E7%AC%AC%E4%BA%8C%E8%8A%82-%E5%8F%98%E9%87%8F%EF%BC%89/#comment-container"><span class="display-none-class">ab6347e30ef93c668d39bdf0bae27331</span><i class="far fa-comment-dots"></i> <span class="commentCount" id="ab6347e30ef93c668d39bdf0bae27331">99+</span>  </a><span class="level-item"><i class="far fa-clock"> </i>15 分钟  <i class="fas fa-pencil-alt"> </i>2.2 k</span></div><div class="pin-icon"><i class="fas fa-thumbtack"></i></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/07/06/Primer-C++-%E7%AC%AC%E4%BA%94%E7%89%88%EF%BC%88%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E5%8F%98%E9%87%8F%E5%92%8C%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B-%E7%AC%AC%E4%BA%8C%E8%8A%82-%E5%8F%98%E9%87%8F%EF%BC%89/">Primer C++ 第五版（第二章 变量和基本类型 第二节 变量）</a></h1><div class="content"><h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><ul>
-<li><p>具名的、 可供程序操作的存储空间；  </p>
-</li>
-<li><p>每个变量都有其数据类型，数据类型决定着变量所占内存空间的大小和布局方式、 该空间能存储的值的范围， 以及变量能参与的运算。  </p>
-</li>
-</ul>
-<h4 id="变量定义"><a href="#变量定义" class="headerlink" title="变量定义"></a>变量定义</h4><h5 id="基本形式"><a href="#基本形式" class="headerlink" title="基本形式"></a>基本形式</h5><ol>
-<li><p>首先是类型说明符 （ type specifier), 随后紧跟由一个或多个变量名组成的列表， 其中变量名以逗号分隔， 最后以分号结束；  </p>
-</li>
-<li><p>列表中每个变量名的类型都由类型说明符指定， 定义时还可以为一个或多个变量赋初值</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> sum = <span class="number">0</span>, value, units_sold = <span class="number">0</span>； 	<span class="comment">// sum、 value 和 units_sold 都是 int</span></span><br><span class="line">										<span class="comment">//units_sold 初值为 0</span></span><br><span class="line"></span><br><span class="line">Sales_item item；			<span class="comment">// item的类型是Sales_item(参见1.5.1节，第17页 ）</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//string是一种库类型,表示一个可变长的字符序列</span></span><br><span class="line">std::string <span class="built_in">book</span>(<span class="string">&quot;0-201-78345-X&quot;</span> )；<span class="comment">//book通过一个string字面值初始化</span></span><br></pre></td></tr></table></figure></li>
-<li><p>对象初识：<br>一块能存储数据并具有某种类型的内存空间 。</p>
-</li>
-</ol>
-<h5 id="初始值"><a href="#初始值" class="headerlink" title="初始值"></a>初始值</h5><p>当对象在创建时获得了一个特定的值， 我们说这个对象被初始化 （ initialized) 了。  </p>
-<ol>
-<li><p>于初始化变量的值可以是任意复杂的表达式 ；</p>
-</li>
-<li><p>当一次定义了两个或多个变量时， 对象的名字随着定义也就马上可以使用了  </p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/ / 正确： price 先被定义并賦值， 随后被用于初始化 discount</span><br><span class="line"><span class="keyword">double</span> price = <span class="number">109.99</span>, discount = price * <span class="number">0.16</span>;</span><br><span class="line">/ /正确： 调用函数 applyDiscount， 然后用函数的返回值初始化 <span class="function">salePrice</span></span><br><span class="line"><span class="function"><span class="keyword">double</span> salePrice <span class="title">applyDiscount</span> <span class="params">(price, discount )</span></span>;</span><br></pre></td></tr></table></figure></li>
-<li><p>初始化是一个异常复杂的问题 ；很多程序序员对于用等号=来初始化变量的方式倍感闲惑， 这种方式容易让人认为初始化足赋值的一种 </p>
-<ul>
-<li>初始化和赋值是两个完全不同的操作  </li>
-<li>在很多编程语言中，二者的区别几乎可以忽略不计  </li>
-<li>初始化不是賦值， 初始化的含义是创建变量时賦予其一个初始值， 而赋值的含义是把对象的当前值擦除， 而以一个新值来替代 </li>
-</ul>
-</li>
-</ol>
-<h6 id="列表初始化"><a href="#列表初始化" class="headerlink" title="列表初始化"></a>列表初始化</h6><ul>
-<li><p>C++11 新标准的一部分  </p>
-</li>
-<li><p>```c++<br>int units_sold = 0；<br>int units_sold = {0}；//列表初始化<br>int units_sold{0}；//列表初始化<br>int units_sold(0)；</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 无论是初始化对象还是某些时候为对象赋新值， 都可以使用这样一组由花括号括起来的初始值了。</span><br><span class="line"></span><br><span class="line">- 当用于内置类型的变量时， 这种初始化形式有一个重要特点： </span><br><span class="line">      如果我们使用列表初始化初始值存在丢失信息的风险， 则编译器将报错：</span><br><span class="line"></span><br><span class="line">  ```c++</span><br><span class="line">  long double Id = 3.1415926536；</span><br><span class="line">  int a&#123;ld&#125;, b = &#123;Id&#125;；	//错误： 转换未执行， 因为存在去失信息的危险</span><br><span class="line">  int c(Id), d = Id；		//正确 ： 转换执行， 且确实丢失了部分值</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h6 id="默认初始化"><a href="#默认初始化" class="headerlink" title="默认初始化"></a>默认初始化</h6><ul>
-<li>定义变量时没有指定初值， 则变量被默认初始化 （ default initialized )  </li>
-<li>变量类型和定义变量的位置也会对此有影响。</li>
-<li>内置类型的变量未被显式初始化， 它的值由定义的位置决定  </li>
-<li>定义于任何函数体之外的变量被初始化为 0  </li>
-<li>定义在函数体内部的内置类型变量将不被初始化（ uninitialized)。<ul>
-<li> 未被初始化的内置类型变量的值是未定义的  </li>
-<li> 试图拷贝或以其他形式访问此类值将引发错误。  </li>
-</ul>
-</li>
-</ul>
-<h4 id="变量声明和定义的关系"><a href="#变量声明和定义的关系" class="headerlink" title="变量声明和定义的关系"></a>变量声明和定义的关系</h4><h5 id="分离式编译"><a href="#分离式编译" class="headerlink" title="分离式编译"></a>分离式编译</h5><ol>
-<li>目的：为了允许把程序拆分成多个逻辑部分来编写  </li>
-<li>形式：允许将程序分割为若干个文件， 每个文件可被独立编译  </li>
-<li>要求：需要有在文件间共享代码的方法  </li>
-<li>例如：一个文件的代码可能需要使用另一个文件中定义的变量。一个实际的例子是 std::cout 和 std::cin,<br>它们定义于标准库， 却能被我们写的程序使用。</li>
-<li>C++的支持模式：声明和定义分开<ol>
-<li> 声明（ declaration) 使得名字为程序所知， 一个文件如果想使用别处定义的名字则必须包含对那个名字的声明  </li>
-<li> 定义(definition) 负责创建与名字关联的实体。</li>
-</ol>
-</li>
-</ol>
-<h5 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h5><p>规定了变量的类型和名字， 在这一点上定义与之相同  </p>
-<h5 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h5><p>规定了变量的类型和名字， 在这一点上定义与之相同；定义还申请存储空间， 也可能会为变量赋一个初始值 </p>
-<h5 id="声明和定义的区别"><a href="#声明和定义的区别" class="headerlink" title="声明和定义的区别"></a>声明和定义的区别</h5><ol>
-<li><p>如果想声明一个变量而非定义它， 就在变量名前添加关键字 extern, 而且不要显式地初始化变量  </p>
-</li>
-<li><p>任何包含了显式初始化的声明即成为定义  </p>
-</li>
-<li><p>在函数体内部， 如果试图初始化一个由 extern 关键字标记的变量， 将引发错误</p>
-</li>
-<li><p>变量能且只能被定义一次， 但是可以被多次声明。  </p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">extern</span> <span class="keyword">int</span> i； <span class="comment">// 声 明i而非定义i</span></span><br><span class="line"><span class="keyword">int</span> j； <span class="comment">//声明并定义j</span></span><br><span class="line"><span class="keyword">int</span> k = <span class="number">10</span>；<span class="comment">//声明并且定义了k，还为k申请了内存空间并且进行了显示初始化</span></span><br><span class="line"><span class="keyword">extern</span> <span class="keyword">double</span> pi = <span class="number">3.14</span><span class="number">.16</span>; <span class="comment">// 定义    </span></span><br></pre></td></tr></table></figure></li>
-<li><p>使用情景：</p>
-<ol>
-<li>如果要在多个文件中使用同一个变量， 就必须将声明和定义分离  </li>
-<li>变量的定义必须出现在且只能出现在一个文件中， 而其他用到该变量的文件必须对其进行声明， 却绝对不能重复定义。 </li>
-</ol>
-</li>
-</ol>
-<h5 id="静态类型"><a href="#静态类型" class="headerlink" title="静态类型"></a>静态类型</h5><p><img src="http://cdn.jsdelivr.net/gh/panxizi/blog_image/img/C++_pic/image-20220705110037691.png" alt="image-20220705110037691"></p>
-<h4 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h4><ul>
-<li><p>由字母、 数字和下画线组成  </p>
-</li>
-<li><p>必须以字母或下画线开头  </p>
-</li>
-<li><p>长度没有限制 ；对大小写字母敏感  </p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/ / 定义 <span class="number">4</span> 个不同的 <span class="keyword">int</span> 变量</span><br><span class="line"><span class="keyword">int</span> somename, someName, SomeName, SOMENAME;</span><br></pre></td></tr></table></figure></li>
-<li><p>C++语言保留了一些名字供语言本身使用， 这些名字不能被用作标识符  ；如表 2.3 和表 2.4 所示<br><img src="http://cdn.jsdelivr.net/gh/panxizi/blog_image/img/C++_pic/image-20220705110334152.png" alt="image-20220705110334152"><br><img src="http://cdn.jsdelivr.net/gh/panxizi/blog_image/img/C++_pic/image-20220705110356276.png" alt="image-20220705110356276"></p>
-</li>
-<li><p>用户自定义的标识符中不能连续出现两个下画线， 也不能以下画线紧连大写字母开头  </p>
-</li>
-<li><p>定义在函数体外的标识符不能以下画线开头。</p>
-</li>
-</ul>
-<h5 id="变量命名规范"><a href="#变量命名规范" class="headerlink" title="变量命名规范"></a>变量命名规范</h5><ul>
-<li> 标识符要能体现实际含义。</li>
-<li> 变量名一般用小写字母， 如 index, 不要使用 Index 或 INDEX。</li>
-<li> 用户自定义的类名一般以大写字母开头， 如 SaleS_item。</li>
-<li> 如果标识符由多个单词组成， 则单词间应有明显区分，如student_loan或student_Loan；不要使用 studentloan.</li>
-</ul>
-<h4 id="名字的作用域"><a href="#名字的作用域" class="headerlink" title="名字的作用域"></a>名字的作用域</h4><ol>
-<li><p>每个名字都会指向一个特定的实体： 变量、 函数、 类型等  </p>
-</li>
-<li><p>同—个名字如果出现在程序的不同位置， 也可能指向的是不同实体  </p>
-</li>
-<li><p>作用域  </p>
-<ol>
-<li>C++语言中大多数作用域都以花括号分隔。</li>
-</ol>
-</li>
-<li><p>实例：</p>
-<p><img src="http://cdn.jsdelivr.net/gh/panxizi/blog_image/img/C++_pic/image-20220705111857075.png" alt="image-20220705111857075"></p>
-</li>
-</ol>
-<h5 id="嵌套的作用域"><a href="#嵌套的作用域" class="headerlink" title="嵌套的作用域"></a>嵌套的作用域</h5><ol>
-<li><p>作用域能彼此包含  </p>
-</li>
-<li><p>内层作用域 ( innerscope )  ：被包含（ 或者说被嵌套） 的作用域  </p>
-</li>
-<li><p>外层作用域 ( outer scope)  ：包含着别的作用域的作用域  </p>
-</li>
-<li><p>作用域中一旦声明了某个名字， 它所嵌套着的所有作用域中都能访问该名字  </p>
-</li>
-<li><p>允许在内层作用域中重新定义外层作用域已有的名字</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span>  <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="comment">// 该程序仅用于说明 ： 函数内部不宜定义与全局变量同名的新变量</span></span><br><span class="line"><span class="keyword">int</span> reused = <span class="number">42</span>; / / reused 拥有全局作用域</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">( )</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> unique <span class="number">0</span>; / / unique 拥有块作用域</span><br><span class="line">    <span class="comment">// 输出 #1: 使用全局变量 reused;输出 42 0</span></span><br><span class="line">	std::cout &lt;&lt; reused &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; unique &lt;&lt; std::endl;</span><br><span class="line">    <span class="keyword">int</span> reused = <span class="number">0</span>; <span class="comment">// 新建局部变量 reused， 覆盖了全局变量 reused</span></span><br><span class="line">    <span class="comment">// 输出 #2: 使用局部变量 reused; 输出 0 0</span></span><br><span class="line">    std::cout &lt;&lt; reused &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; unique &lt;&lt; std::endl;</span><br><span class="line">    <span class="comment">// 输出#3: 显式地访问全局变量 reused; 输出 42 0</span></span><br><span class="line">    std::cout &lt;&lt; ::reused &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; unique &lt;&lt; std::endl;</span><br><span class="line">    <span class="comment">//全局作用域本身并没有名字， 所以当作用域操作符的左侧为空时， </span></span><br><span class="line">    <span class="comment">//向全局作用域发出请求获取作用域操作符右侧名字对应的变量</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li><p>如果函数有可能用到某全局变量， 则不宜再定义一个同名的局部变量 </p>
-</li>
-</ol>
-</div><div class="index-category-tag"><div class="level-item"><i class="fas fa-folder-open has-text-grey"> </i><a class="article-more button is-small link-muted index-categories" href="/categories/C/">C++</a></div>  <div class="level-item"><i class="fas fa-tags has-text-grey"> </i><a class="article-more button is-small link-muted index-tags" href="/tags/C/">C++</a></div><hr></div></article></div><!--!--><div class="card"><div class="card-image"><a class="image is-7by3" href="/2022/07/06/Primer-C++-%E7%AC%AC%E4%BA%94%E7%89%88%EF%BC%88%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E5%8F%98%E9%87%8F%E5%92%8C%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B-%E7%AC%AC%E4%B8%89%E8%8A%82-%E5%A4%8D%E5%90%88%E7%B1%BB%E5%9E%8B%EF%BC%89/"><img class="fill" src="http://cdn.jsdelivr.net/gh/panxizi/blog_image/img/C++_pic/ffe1268ebd4674668d8b8adc79fa46d.png" alt="Primer C++ 第五版（第二章 变量和基本类型 第三节 复合类型）"></a></div><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><i class="far fa-calendar-plus"> </i>2022-07-06  <a class="commentCountImg" href="/2022/07/06/Primer-C++-%E7%AC%AC%E4%BA%94%E7%89%88%EF%BC%88%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E5%8F%98%E9%87%8F%E5%92%8C%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B-%E7%AC%AC%E4%B8%89%E8%8A%82-%E5%A4%8D%E5%90%88%E7%B1%BB%E5%9E%8B%EF%BC%89/#comment-container"><span class="display-none-class">83ddaccf0684812d1829b07735b89f52</span><i class="far fa-comment-dots"></i> <span class="commentCount" id="83ddaccf0684812d1829b07735b89f52">99+</span>  </a><span class="level-item"><i class="far fa-clock"> </i>20 分钟  <i class="fas fa-pencil-alt"> </i>3.0 k</span></div><div class="pin-icon"><i class="fas fa-thumbtack"></i></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/07/06/Primer-C++-%E7%AC%AC%E4%BA%94%E7%89%88%EF%BC%88%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E5%8F%98%E9%87%8F%E5%92%8C%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B-%E7%AC%AC%E4%B8%89%E8%8A%82-%E5%A4%8D%E5%90%88%E7%B1%BB%E5%9E%8B%EF%BC%89/">Primer C++ 第五版（第二章 变量和基本类型 第三节 复合类型）</a></h1><div class="content"><h3 id="复合类型"><a href="#复合类型" class="headerlink" title="复合类型"></a>复合类型</h3><ul>
+</div><div class="index-category-tag"><div class="level-item"><i class="fas fa-folder-open has-text-grey"> </i><a class="article-more button is-small link-muted index-categories" href="/categories/C/">C++</a></div>  <div class="level-item"><i class="fas fa-tags has-text-grey"> </i><a class="article-more button is-small link-muted index-tags" href="/tags/C/">C++</a></div><hr></div></article></div><div class="card"><div class="card-image"><a class="image is-7by3" href="/2022/07/06/Primer-C++-%E7%AC%AC%E4%BA%94%E7%89%88%EF%BC%88%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E5%8F%98%E9%87%8F%E5%92%8C%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B-%E7%AC%AC%E4%B8%89%E8%8A%82-%E5%A4%8D%E5%90%88%E7%B1%BB%E5%9E%8B%EF%BC%89/"><img class="fill" src="http://cdn.jsdelivr.net/gh/panxizi/blog_image/img/C++_pic/ffe1268ebd4674668d8b8adc79fa46d.png" alt="Primer C++ 第五版（第二章 变量和基本类型 第三节 复合类型）"></a></div><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><i class="far fa-calendar-plus"> </i>2022-07-06  <a class="commentCountImg" href="/2022/07/06/Primer-C++-%E7%AC%AC%E4%BA%94%E7%89%88%EF%BC%88%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E5%8F%98%E9%87%8F%E5%92%8C%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B-%E7%AC%AC%E4%B8%89%E8%8A%82-%E5%A4%8D%E5%90%88%E7%B1%BB%E5%9E%8B%EF%BC%89/#comment-container"><span class="display-none-class">83ddaccf0684812d1829b07735b89f52</span><i class="far fa-comment-dots"></i> <span class="commentCount" id="83ddaccf0684812d1829b07735b89f52">99+</span>  </a><span class="level-item"><i class="far fa-clock"> </i>20 分钟  <i class="fas fa-pencil-alt"> </i>3.0 k</span></div><div class="pin-icon"><i class="fas fa-thumbtack"></i></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/07/06/Primer-C++-%E7%AC%AC%E4%BA%94%E7%89%88%EF%BC%88%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E5%8F%98%E9%87%8F%E5%92%8C%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B-%E7%AC%AC%E4%B8%89%E8%8A%82-%E5%A4%8D%E5%90%88%E7%B1%BB%E5%9E%8B%EF%BC%89/">Primer C++ 第五版（第二章 变量和基本类型 第三节 复合类型）</a></h1><div class="content"><h3 id="复合类型"><a href="#复合类型" class="headerlink" title="复合类型"></a>复合类型</h3><ul>
 <li>基于其他类型定义的类型 </li>
 <li>本章将介绍其中的两种： 引用和指针  </li>
 <li>声明语句 :基本数据类型（ base type)  +  声明符( declarator) 列表  </li>
@@ -615,6 +492,129 @@
 3.声明符的其余部分用以确定 r 引用的类型是什么， 此例中的符号* 说明 r 引用的是一个指针。
 4.最后，声明的基本数据类型部分指出 r 引用的是一个 int 指针。
 </code></pre>
+</div><div class="index-category-tag"><div class="level-item"><i class="fas fa-folder-open has-text-grey"> </i><a class="article-more button is-small link-muted index-categories" href="/categories/C/">C++</a></div>  <div class="level-item"><i class="fas fa-tags has-text-grey"> </i><a class="article-more button is-small link-muted index-tags" href="/tags/C/">C++</a></div><hr></div></article></div><!--!--><div class="card"><div class="card-image"><a class="image is-7by3" href="/2022/07/06/Primer-C++-%E7%AC%AC%E4%BA%94%E7%89%88%EF%BC%88%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E5%8F%98%E9%87%8F%E5%92%8C%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B-%E7%AC%AC%E4%BA%8C%E8%8A%82-%E5%8F%98%E9%87%8F%EF%BC%89/"><img class="fill" src="http://cdn.jsdelivr.net/gh/panxizi/blog_image/img/C++_pic/ffe1268ebd4674668d8b8adc79fa46d.png" alt="Primer C++ 第五版（第二章 变量和基本类型 第二节 变量）"></a></div><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><i class="far fa-calendar-plus"> </i>2022-07-06  <a class="commentCountImg" href="/2022/07/06/Primer-C++-%E7%AC%AC%E4%BA%94%E7%89%88%EF%BC%88%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E5%8F%98%E9%87%8F%E5%92%8C%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B-%E7%AC%AC%E4%BA%8C%E8%8A%82-%E5%8F%98%E9%87%8F%EF%BC%89/#comment-container"><span class="display-none-class">ab6347e30ef93c668d39bdf0bae27331</span><i class="far fa-comment-dots"></i> <span class="commentCount" id="ab6347e30ef93c668d39bdf0bae27331">99+</span>  </a><span class="level-item"><i class="far fa-clock"> </i>15 分钟  <i class="fas fa-pencil-alt"> </i>2.2 k</span></div><div class="pin-icon"><i class="fas fa-thumbtack"></i></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/07/06/Primer-C++-%E7%AC%AC%E4%BA%94%E7%89%88%EF%BC%88%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E5%8F%98%E9%87%8F%E5%92%8C%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B-%E7%AC%AC%E4%BA%8C%E8%8A%82-%E5%8F%98%E9%87%8F%EF%BC%89/">Primer C++ 第五版（第二章 变量和基本类型 第二节 变量）</a></h1><div class="content"><h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><ul>
+<li><p>具名的、 可供程序操作的存储空间；  </p>
+</li>
+<li><p>每个变量都有其数据类型，数据类型决定着变量所占内存空间的大小和布局方式、 该空间能存储的值的范围， 以及变量能参与的运算。  </p>
+</li>
+</ul>
+<h4 id="变量定义"><a href="#变量定义" class="headerlink" title="变量定义"></a>变量定义</h4><h5 id="基本形式"><a href="#基本形式" class="headerlink" title="基本形式"></a>基本形式</h5><ol>
+<li><p>首先是类型说明符 （ type specifier), 随后紧跟由一个或多个变量名组成的列表， 其中变量名以逗号分隔， 最后以分号结束；  </p>
+</li>
+<li><p>列表中每个变量名的类型都由类型说明符指定， 定义时还可以为一个或多个变量赋初值</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> sum = <span class="number">0</span>, value, units_sold = <span class="number">0</span>； 	<span class="comment">// sum、 value 和 units_sold 都是 int</span></span><br><span class="line">										<span class="comment">//units_sold 初值为 0</span></span><br><span class="line"></span><br><span class="line">Sales_item item；			<span class="comment">// item的类型是Sales_item(参见1.5.1节，第17页 ）</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//string是一种库类型,表示一个可变长的字符序列</span></span><br><span class="line">std::string <span class="built_in">book</span>(<span class="string">&quot;0-201-78345-X&quot;</span> )；<span class="comment">//book通过一个string字面值初始化</span></span><br></pre></td></tr></table></figure></li>
+<li><p>对象初识：<br>一块能存储数据并具有某种类型的内存空间 。</p>
+</li>
+</ol>
+<h5 id="初始值"><a href="#初始值" class="headerlink" title="初始值"></a>初始值</h5><p>当对象在创建时获得了一个特定的值， 我们说这个对象被初始化 （ initialized) 了。  </p>
+<ol>
+<li><p>于初始化变量的值可以是任意复杂的表达式 ；</p>
+</li>
+<li><p>当一次定义了两个或多个变量时， 对象的名字随着定义也就马上可以使用了  </p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/ / 正确： price 先被定义并賦值， 随后被用于初始化 discount</span><br><span class="line"><span class="keyword">double</span> price = <span class="number">109.99</span>, discount = price * <span class="number">0.16</span>;</span><br><span class="line">/ /正确： 调用函数 applyDiscount， 然后用函数的返回值初始化 <span class="function">salePrice</span></span><br><span class="line"><span class="function"><span class="keyword">double</span> salePrice <span class="title">applyDiscount</span> <span class="params">(price, discount )</span></span>;</span><br></pre></td></tr></table></figure></li>
+<li><p>初始化是一个异常复杂的问题 ；很多程序序员对于用等号=来初始化变量的方式倍感闲惑， 这种方式容易让人认为初始化足赋值的一种 </p>
+<ul>
+<li>初始化和赋值是两个完全不同的操作  </li>
+<li>在很多编程语言中，二者的区别几乎可以忽略不计  </li>
+<li>初始化不是賦值， 初始化的含义是创建变量时賦予其一个初始值， 而赋值的含义是把对象的当前值擦除， 而以一个新值来替代 </li>
+</ul>
+</li>
+</ol>
+<h6 id="列表初始化"><a href="#列表初始化" class="headerlink" title="列表初始化"></a>列表初始化</h6><ul>
+<li><p>C++11 新标准的一部分  </p>
+</li>
+<li><p>```c++<br>int units_sold = 0；<br>int units_sold = {0}；//列表初始化<br>int units_sold{0}；//列表初始化<br>int units_sold(0)；</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 无论是初始化对象还是某些时候为对象赋新值， 都可以使用这样一组由花括号括起来的初始值了。</span><br><span class="line"></span><br><span class="line">- 当用于内置类型的变量时， 这种初始化形式有一个重要特点： </span><br><span class="line">      如果我们使用列表初始化初始值存在丢失信息的风险， 则编译器将报错：</span><br><span class="line"></span><br><span class="line">  ```c++</span><br><span class="line">  long double Id = 3.1415926536；</span><br><span class="line">  int a&#123;ld&#125;, b = &#123;Id&#125;；	//错误： 转换未执行， 因为存在去失信息的危险</span><br><span class="line">  int c(Id), d = Id；		//正确 ： 转换执行， 且确实丢失了部分值</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h6 id="默认初始化"><a href="#默认初始化" class="headerlink" title="默认初始化"></a>默认初始化</h6><ul>
+<li>定义变量时没有指定初值， 则变量被默认初始化 （ default initialized )  </li>
+<li>变量类型和定义变量的位置也会对此有影响。</li>
+<li>内置类型的变量未被显式初始化， 它的值由定义的位置决定  </li>
+<li>定义于任何函数体之外的变量被初始化为 0  </li>
+<li>定义在函数体内部的内置类型变量将不被初始化（ uninitialized)。<ul>
+<li> 未被初始化的内置类型变量的值是未定义的  </li>
+<li> 试图拷贝或以其他形式访问此类值将引发错误。  </li>
+</ul>
+</li>
+</ul>
+<h4 id="变量声明和定义的关系"><a href="#变量声明和定义的关系" class="headerlink" title="变量声明和定义的关系"></a>变量声明和定义的关系</h4><h5 id="分离式编译"><a href="#分离式编译" class="headerlink" title="分离式编译"></a>分离式编译</h5><ol>
+<li>目的：为了允许把程序拆分成多个逻辑部分来编写  </li>
+<li>形式：允许将程序分割为若干个文件， 每个文件可被独立编译  </li>
+<li>要求：需要有在文件间共享代码的方法  </li>
+<li>例如：一个文件的代码可能需要使用另一个文件中定义的变量。一个实际的例子是 std::cout 和 std::cin,<br>它们定义于标准库， 却能被我们写的程序使用。</li>
+<li>C++的支持模式：声明和定义分开<ol>
+<li> 声明（ declaration) 使得名字为程序所知， 一个文件如果想使用别处定义的名字则必须包含对那个名字的声明  </li>
+<li> 定义(definition) 负责创建与名字关联的实体。</li>
+</ol>
+</li>
+</ol>
+<h5 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h5><p>规定了变量的类型和名字， 在这一点上定义与之相同  </p>
+<h5 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h5><p>规定了变量的类型和名字， 在这一点上定义与之相同；定义还申请存储空间， 也可能会为变量赋一个初始值 </p>
+<h5 id="声明和定义的区别"><a href="#声明和定义的区别" class="headerlink" title="声明和定义的区别"></a>声明和定义的区别</h5><ol>
+<li><p>如果想声明一个变量而非定义它， 就在变量名前添加关键字 extern, 而且不要显式地初始化变量  </p>
+</li>
+<li><p>任何包含了显式初始化的声明即成为定义  </p>
+</li>
+<li><p>在函数体内部， 如果试图初始化一个由 extern 关键字标记的变量， 将引发错误</p>
+</li>
+<li><p>变量能且只能被定义一次， 但是可以被多次声明。  </p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">extern</span> <span class="keyword">int</span> i； <span class="comment">// 声 明i而非定义i</span></span><br><span class="line"><span class="keyword">int</span> j； <span class="comment">//声明并定义j</span></span><br><span class="line"><span class="keyword">int</span> k = <span class="number">10</span>；<span class="comment">//声明并且定义了k，还为k申请了内存空间并且进行了显示初始化</span></span><br><span class="line"><span class="keyword">extern</span> <span class="keyword">double</span> pi = <span class="number">3.14</span><span class="number">.16</span>; <span class="comment">// 定义    </span></span><br></pre></td></tr></table></figure></li>
+<li><p>使用情景：</p>
+<ol>
+<li>如果要在多个文件中使用同一个变量， 就必须将声明和定义分离  </li>
+<li>变量的定义必须出现在且只能出现在一个文件中， 而其他用到该变量的文件必须对其进行声明， 却绝对不能重复定义。 </li>
+</ol>
+</li>
+</ol>
+<h5 id="静态类型"><a href="#静态类型" class="headerlink" title="静态类型"></a>静态类型</h5><p><img src="http://cdn.jsdelivr.net/gh/panxizi/blog_image/img/C++_pic/image-20220705110037691.png" alt="image-20220705110037691"></p>
+<h4 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h4><ul>
+<li><p>由字母、 数字和下画线组成  </p>
+</li>
+<li><p>必须以字母或下画线开头  </p>
+</li>
+<li><p>长度没有限制 ；对大小写字母敏感  </p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/ / 定义 <span class="number">4</span> 个不同的 <span class="keyword">int</span> 变量</span><br><span class="line"><span class="keyword">int</span> somename, someName, SomeName, SOMENAME;</span><br></pre></td></tr></table></figure></li>
+<li><p>C++语言保留了一些名字供语言本身使用， 这些名字不能被用作标识符  ；如表 2.3 和表 2.4 所示<br><img src="http://cdn.jsdelivr.net/gh/panxizi/blog_image/img/C++_pic/image-20220705110334152.png" alt="image-20220705110334152"><br><img src="http://cdn.jsdelivr.net/gh/panxizi/blog_image/img/C++_pic/image-20220705110356276.png" alt="image-20220705110356276"></p>
+</li>
+<li><p>用户自定义的标识符中不能连续出现两个下画线， 也不能以下画线紧连大写字母开头  </p>
+</li>
+<li><p>定义在函数体外的标识符不能以下画线开头。</p>
+</li>
+</ul>
+<h5 id="变量命名规范"><a href="#变量命名规范" class="headerlink" title="变量命名规范"></a>变量命名规范</h5><ul>
+<li> 标识符要能体现实际含义。</li>
+<li> 变量名一般用小写字母， 如 index, 不要使用 Index 或 INDEX。</li>
+<li> 用户自定义的类名一般以大写字母开头， 如 SaleS_item。</li>
+<li> 如果标识符由多个单词组成， 则单词间应有明显区分，如student_loan或student_Loan；不要使用 studentloan.</li>
+</ul>
+<h4 id="名字的作用域"><a href="#名字的作用域" class="headerlink" title="名字的作用域"></a>名字的作用域</h4><ol>
+<li><p>每个名字都会指向一个特定的实体： 变量、 函数、 类型等  </p>
+</li>
+<li><p>同—个名字如果出现在程序的不同位置， 也可能指向的是不同实体  </p>
+</li>
+<li><p>作用域  </p>
+<ol>
+<li>C++语言中大多数作用域都以花括号分隔。</li>
+</ol>
+</li>
+<li><p>实例：</p>
+<p><img src="http://cdn.jsdelivr.net/gh/panxizi/blog_image/img/C++_pic/image-20220705111857075.png" alt="image-20220705111857075"></p>
+</li>
+</ol>
+<h5 id="嵌套的作用域"><a href="#嵌套的作用域" class="headerlink" title="嵌套的作用域"></a>嵌套的作用域</h5><ol>
+<li><p>作用域能彼此包含  </p>
+</li>
+<li><p>内层作用域 ( innerscope )  ：被包含（ 或者说被嵌套） 的作用域  </p>
+</li>
+<li><p>外层作用域 ( outer scope)  ：包含着别的作用域的作用域  </p>
+</li>
+<li><p>作用域中一旦声明了某个名字， 它所嵌套着的所有作用域中都能访问该名字  </p>
+</li>
+<li><p>允许在内层作用域中重新定义外层作用域已有的名字</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span>  <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="comment">// 该程序仅用于说明 ： 函数内部不宜定义与全局变量同名的新变量</span></span><br><span class="line"><span class="keyword">int</span> reused = <span class="number">42</span>; / / reused 拥有全局作用域</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">( )</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> unique <span class="number">0</span>; / / unique 拥有块作用域</span><br><span class="line">    <span class="comment">// 输出 #1: 使用全局变量 reused;输出 42 0</span></span><br><span class="line">	std::cout &lt;&lt; reused &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; unique &lt;&lt; std::endl;</span><br><span class="line">    <span class="keyword">int</span> reused = <span class="number">0</span>; <span class="comment">// 新建局部变量 reused， 覆盖了全局变量 reused</span></span><br><span class="line">    <span class="comment">// 输出 #2: 使用局部变量 reused; 输出 0 0</span></span><br><span class="line">    std::cout &lt;&lt; reused &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; unique &lt;&lt; std::endl;</span><br><span class="line">    <span class="comment">// 输出#3: 显式地访问全局变量 reused; 输出 42 0</span></span><br><span class="line">    std::cout &lt;&lt; ::reused &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; unique &lt;&lt; std::endl;</span><br><span class="line">    <span class="comment">//全局作用域本身并没有名字， 所以当作用域操作符的左侧为空时， </span></span><br><span class="line">    <span class="comment">//向全局作用域发出请求获取作用域操作符右侧名字对应的变量</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>如果函数有可能用到某全局变量， 则不宜再定义一个同名的局部变量 </p>
+</li>
+</ol>
 </div><div class="index-category-tag"><div class="level-item"><i class="fas fa-folder-open has-text-grey"> </i><a class="article-more button is-small link-muted index-categories" href="/categories/C/">C++</a></div>  <div class="level-item"><i class="fas fa-tags has-text-grey"> </i><a class="article-more button is-small link-muted index-tags" href="/tags/C/">C++</a></div><hr></div></article></div><div class="card"><div class="card-image"><a class="image is-7by3" href="/2022/07/06/Primer-C++-%E7%AC%AC%E4%BA%94%E7%89%88%EF%BC%88%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E5%8F%98%E9%87%8F%E5%92%8C%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B-%E7%AC%AC%E4%B8%80%E8%8A%82-%E5%9F%BA%E6%9C%AC%E5%86%85%E7%BD%AE%E7%B1%BB%E5%9E%8B%EF%BC%89/"><img class="fill" src="http://cdn.jsdelivr.net/gh/panxizi/blog_image/img/C++_pic/ffe1268ebd4674668d8b8adc79fa46d.png" alt="Primer C++ 第五版（第二章 变量和基本类型 第一节 基本内置类型）"></a></div><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><i class="far fa-calendar-plus"> </i>2022-07-06  <a class="commentCountImg" href="/2022/07/06/Primer-C++-%E7%AC%AC%E4%BA%94%E7%89%88%EF%BC%88%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E5%8F%98%E9%87%8F%E5%92%8C%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B-%E7%AC%AC%E4%B8%80%E8%8A%82-%E5%9F%BA%E6%9C%AC%E5%86%85%E7%BD%AE%E7%B1%BB%E5%9E%8B%EF%BC%89/#comment-container"><span class="display-none-class">4f414a57dff37f6a58bd2f6e4d685fc6</span><i class="far fa-comment-dots"></i> <span class="commentCount" id="4f414a57dff37f6a58bd2f6e4d685fc6">99+</span>  </a><span class="level-item"><i class="far fa-clock"> </i>12 分钟  <i class="fas fa-pencil-alt"> </i>1.8 k</span></div><div class="pin-icon"><i class="fas fa-thumbtack"></i></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/07/06/Primer-C++-%E7%AC%AC%E4%BA%94%E7%89%88%EF%BC%88%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E5%8F%98%E9%87%8F%E5%92%8C%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B-%E7%AC%AC%E4%B8%80%E8%8A%82-%E5%9F%BA%E6%9C%AC%E5%86%85%E7%BD%AE%E7%B1%BB%E5%9E%8B%EF%BC%89/">Primer C++ 第五版（第二章 变量和基本类型 第一节 基本内置类型）</a></h1><div class="content"><h3 id="基本内置类型"><a href="#基本内置类型" class="headerlink" title="基本内置类型"></a>基本内置类型</h3><ul>
 <li>包括算术类型（ arithmetic type ) 和空类型（ void)   </li>
 </ul>
